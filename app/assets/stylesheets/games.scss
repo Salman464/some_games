@@ -59,8 +59,8 @@ main { position: relative; z-index: 1; }
   font-size: 0.875rem;
 
   &--notice {
-    background: rgba(123, 44, 255, 0.1);
-    border: 1px solid rgba(123, 44, 255, 0.3);
+    background: rgba($pp-purple-100, 0.1);
+    border: 1px solid rgba($pp-purple-100, 0.3);
     color: var(--pp-purple-100);
   }
 }

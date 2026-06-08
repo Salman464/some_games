@@ -19,15 +19,14 @@ $pp-font-heading: "Rubik", system-ui, sans-serif;   // titles, price
 $pp-font-body:    "Inter", system-ui, sans-serif;    // nav, badges, buttons
 $pp-font-meta:    "Roboto", system-ui, sans-serif;   // bids, payment label
 
-// ── Brand gradients ─────────────────────────────────────────────────────────
+// ── Brand button gradient (Figma "BUTTON GRADIENT") ───────────────────────────
 $pp-button-gradient: linear-gradient(
   186deg,
-  rgba($pp-purple-80, 0.5) 15%,
-  rgba($pp-purple-100, 0.5) 41%,
-  rgba(#2c1a4d, 0.5) 80%,
-  rgba($pp-shadow-realm, 0.5) 101%
+  rgba(151, 89, 255, 0.5) 15%,
+  rgba(123, 45, 255, 0.5) 41%,
+  rgba(44, 26, 77, 0.5) 80%,
+  rgba(22, 13, 39, 0.5) 101%
 );
-$pp-hero-gradient: linear-gradient(180deg, #241449 0%, $pp-shadow-realm 100%);
 
 // ── Bootstrap variable overrides ──────────────────────────────────────────────
 $primary:                $pp-purple-100;
