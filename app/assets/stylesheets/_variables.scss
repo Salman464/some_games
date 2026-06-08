@@ -1,0 +1,57 @@
+// =============================================================================
+// Design tokens — sourced from the Figma "UI test" file (Turnip Cake marketplace)
+// These MUST be defined before Bootstrap is imported so the overrides below take
+// effect when Bootstrap compiles its theme.
+// =============================================================================
+
+// ── Palette ──────────────────────────────────────────────────────────────────
+$pp-paper-pawn:   #f4f6fa; // page background / light text on dark
+$pp-shadow-realm: #160d27; // card + footer background (ink)
+$pp-purple-100:   #7b2cff; // primary
+$pp-purple-80:    #9556ff; // gradient mid / social icons
+$pp-purple-60:    #b080ff; // bids / accents
+$pp-gray-100:     #ededf1; // price text
+$pp-gray-300:     #b5b6c4; // condition / muted text
+$pp-silver:       #b9c1d6; // "Accepts:" label
+
+// ── Typography ────────────────────────────────────────────────────────────────
+$pp-font-heading: "Rubik", system-ui, sans-serif;   // titles, price
+$pp-font-body:    "Inter", system-ui, sans-serif;    // nav, badges, buttons
+$pp-font-meta:    "Roboto", system-ui, sans-serif;   // bids, payment label
+
+// ── Brand gradients ─────────────────────────────────────────────────────────
+$pp-button-gradient: linear-gradient(
+  186deg,
+  rgba($pp-purple-80, 0.5) 15%,
+  rgba($pp-purple-100, 0.5) 41%,
+  rgba(#2c1a4d, 0.5) 80%,
+  rgba($pp-shadow-realm, 0.5) 101%
+);
+$pp-hero-gradient: linear-gradient(180deg, #241449 0%, $pp-shadow-realm 100%);
+
+// ── Bootstrap variable overrides ──────────────────────────────────────────────
+$primary:                $pp-purple-100;
+$body-bg:                $pp-paper-pawn;
+$body-color:             $pp-shadow-realm;
+$font-family-sans-serif: $pp-font-body;
+$headings-font-family:   $pp-font-heading;
+$border-radius:          8px;
+$border-radius-lg:       8px;
+$border-radius-sm:       8px;
+$container-max-widths:   (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1320px);
+
+// ── Runtime CSS custom properties (consumed by component partials) ─────────────
+:root {
+  --pp-paper-pawn:   #{$pp-paper-pawn};
+  --pp-shadow-realm: #{$pp-shadow-realm};
+  --pp-purple-100:   #{$pp-purple-100};
+  --pp-purple-80:    #{$pp-purple-80};
+  --pp-purple-60:    #{$pp-purple-60};
+  --pp-gray-100:     #{$pp-gray-100};
+  --pp-gray-300:     #{$pp-gray-300};
+  --pp-silver:       #{$pp-silver};
+
+  --pp-font-heading: #{$pp-font-heading};
+  --pp-font-body:    #{$pp-font-body};
+  --pp-font-meta:    #{$pp-font-meta};
+}

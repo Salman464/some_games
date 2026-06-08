@@ -1,0 +1,29 @@
+<footer class="site-footer">
+  <%= image_tag "figma/glass-logo.png", alt: "", class: "site-footer__glass" %>
+
+  <div class="site-footer__top container">
+    <%= link_to games_path, class: "site-footer__brand", aria: { label: "Turnip Cake — home" } do %>
+      <%= render "layouts/logo" %>
+    <% end %>
+
+    <ul class="site-footer__links">
+      <li><%= link_to "About", "#" %></li>
+      <li><%= link_to "Support", "#" %></li>
+      <li><%= link_to "Privacy Policy", "#" %></li>
+    </ul>
+  </div>
+
+  <%= link_to "Find events near you", "#", class: "footer-cta" %>
+
+  <div class="site-footer__social">
+    <%= link_to "#", class: "social-icon", aria: { label: "Facebook" } do %>
+      <%= image_tag "figma/icon-facebook.svg", alt: "" %>
+    <% end %>
+    <%= link_to "#", class: "social-icon", aria: { label: "Instagram" } do %>
+      <%= image_tag "figma/icon-instagram.svg", alt: "" %>
+    <% end %>
+    <%= link_to "#", class: "social-icon social-icon--glyph", aria: { label: "X" } do %>
+      <i class="bi bi-twitter-x"></i>
+    <% end %>
+  </div>
+</footer>

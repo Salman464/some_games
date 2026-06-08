@@ -18,12 +18,25 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
+    <%# Brand fonts (Figma): Rubik (headings/price), Inter (UI), Roboto (meta) %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Rubik:wght@500;600&family=Roboto:wght@400;600;800&display=swap">
+
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <%# Decorative Figma aurora — full-document scrolling backdrop (behind content + footer) %>
+    <div class="aurora" aria-hidden="true">
+      <%= image_tag "figma/aurora-bg.png", alt: "", class: "aurora__img" %>
+    </div>
+    <%= render "layouts/header" %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render "layouts/footer" %>
   </body>
 </html>

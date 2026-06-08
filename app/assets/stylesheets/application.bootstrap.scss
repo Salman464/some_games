@@ -1,4 +1,16 @@
+// Design tokens + Bootstrap variable overrides (must load before Bootstrap)
+@import 'variables';
+
+// Bootstrap + icon font
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-@import 'games'
+// App layout regions
+@import 'layout/header';
+@import 'layout/footer';
+
+// Reusable components
+@import 'components/game_card';
+
+// Page-level styles (games index: hero band, aurora, grid)
+@import 'games';

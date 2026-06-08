@@ -1,19 +1,24 @@
-<div id="<%= dom_id game %>">
-  <%= image_tag "board_game_images/#{game.name}.jpg" %>
+<%# Marketplace listing card (Figma node 1:870). %>
+<%# `linked` (default true) wraps the card in a link to the game's detail page. %>
+<% linked = local_assigns.fetch(:linked, true) %>
+<article id="<%= dom_id game %>" class="game-card">
+  <%= content_tag(linked ? :a : :div,
+        href: (linked ? game_path(game) : nil),
+        class: "game-card__link") do %>
+    <div class="game-card__image">
+      <%= game_cover_tag(game) %>
+    </div>
 
-  <div>
-    <strong>Name:</strong>
-    <%= game.name %>
-  </div>
+    <div class="game-card__details">
+      <h2 class="game-card__title"><%= game.name %></h2>
 
-  <div>
-    <strong>Condition:</strong>
-    <%= game.condition %>
-  </div>
-
-  <div>
-    <strong>Price cents:</strong>
-    <%= game.price_cents %>
-  </div>
-
-</div>
+      <div class="game-card__meta">
+        <%= render "games/condition_badge", game: game %>
+        <p class="game-card__price"><%= game.formatted_price %></p>
+        <%# Bids are presentational — the Game model has no auction data. %>
+        <p class="game-card__bids">2 bids</p>
+        <%= render "games/payment_methods" %>
+      </div>
+    </div>
+  <% end %>
+</article>

@@ -1,0 +1,7 @@
+<%# "Turnip Cake" wordmark, rebuilt from the three Figma SVG parts (renders white). %>
+<%# Used in both the nav and the footer. Positioning lives in layout/_header.scss. %>
+<span class="brand-logo <%= local_assigns[:extra_class] %>" role="img" aria-label="Turnip Cake">
+  <span class="brand-logo__part brand-logo__part--icon"><%= image_tag "figma/logo-part-2.svg", alt: "" %></span>
+  <span class="brand-logo__part brand-logo__part--word-a"><%= image_tag "figma/logo-part-0.svg", alt: "" %></span>
+  <span class="brand-logo__part brand-logo__part--word-b"><%= image_tag "figma/logo-part-1.svg", alt: "" %></span>
+</span>

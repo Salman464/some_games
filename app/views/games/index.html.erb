@@ -1,16 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Games" %>
 
-<h1>Games</h1>
+<% if notice.present? %>
+  <p class="flash flash--notice"><%= notice %></p>
+<% end %>
 
-<div id="games">
-  <% @games.each do |game| %>
-    <%= render game %>
-    <p>
-      <%= link_to "Show this game", game %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New game", new_game_path %>
+<section class="browse">
+  <div class="container">
+    <h1 class="visually-hidden">Browse games</h1>
+    <div class="games-grid">
+      <%= render @games %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,101 @@
+// =============================================================================
+// Site header / top nav (Figma node 1:824). Rendered exactly as the Figma: white
+// logo + white menu/icons on the light page (no dark band), so it reads as a
+// faint/near-invisible nav by design. Sits above the aurora backdrop.
+// =============================================================================
+
+.site-header {
+  position: relative;
+  z-index: 1;
+  padding: 24px 0;
+  color: var(--pp-paper-pawn);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  // Empty reserved search slot (no visible field in the Figma).
+  &__search {
+    flex: 1 1 500px;
+    max-width: 500px;
+    height: 42px;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+      font-family: var(--pp-font-body);
+      font-weight: 400;
+      font-size: 1rem;     // 16px
+      color: var(--pp-paper-pawn);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    a {
+      color: var(--pp-paper-pawn);
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+}
+
+// Cart icon with quantity bubble (white circle, purple count — per Figma).
+.nav-cart {
+  position: relative;
+  display: inline-flex;
+
+  &__qty {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 200px;
+    background: var(--pp-paper-pawn);
+    color: var(--pp-purple-100);
+    font-family: var(--pp-font-body);
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+
+    &__search { order: 3; flex-basis: 100%; max-width: none; height: auto; }
+    &__links { gap: 20px; }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-nav__links { display: none; }
+}

@@ -1,0 +1,12 @@
+<%# Accepted payment methods (Figma "Accepts:" row). Presentational — the icon %>
+<%# set is global to the marketplace, not per-game data. Styling: _game_card.scss. %>
+<div class="payment-methods">
+  <span class="payment-methods__label">Accepts:</span>
+  <ul class="payment-methods__icons">
+    <% %w[cash cashapp paypal venmo zelle].each do |method| %>
+      <li>
+        <%= image_tag "figma/pay-#{method}.svg", alt: method.titleize, class: "payment-methods__icon" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,28 @@
+<header class="site-header">
+  <nav class="site-nav container" aria-label="Primary">
+    <%= link_to games_path, class: "site-nav__brand", aria: { label: "Turnip Cake — home" } do %>
+      <%= render "layouts/logo" %>
+    <% end %>
+
+    <%# Empty search slot — reserved 500px area in the Figma (no visible field). %>
+    <div class="site-nav__search" aria-hidden="true"></div>
+
+    <div class="site-nav__menu">
+      <ul class="site-nav__links">
+        <li><%= link_to "Sell", new_game_path %></li>
+        <li><%= link_to "Faqs", "#" %></li>
+        <li><%= link_to "Pricing", "#" %></li>
+        <li><%= link_to "Log In", "#" %></li>
+      </ul>
+
+      <div class="site-nav__icons">
+        <%= link_to "#", aria: { label: "Notifications" } do %><i class="bi bi-bell"></i><% end %>
+        <%= link_to "#", aria: { label: "Location" } do %><i class="bi bi-geo-alt"></i><% end %>
+        <%= link_to "#", class: "nav-cart", aria: { label: "Cart" } do %>
+          <i class="bi bi-cart"></i>
+          <span class="nav-cart__qty">2</span>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+</header>
